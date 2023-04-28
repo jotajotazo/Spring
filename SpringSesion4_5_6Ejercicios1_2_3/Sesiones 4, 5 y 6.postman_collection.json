@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "4f651253-34fe-44f4-b11d-b9e3d3f0b23e",
+		"name": "Sesiones 4, 5 y 6",
+		"description": "``` markdown\n\n## Ejercicios sesiones 4, 5 y 6\n\n### Ejercicio 1:\n\nCrear un proyecto Spring Boot con las dependencias:\n* H2 \n* Spring Data JPA\n* Spring Web \n* Spring Boot Dev tools\n\nCrear una clase HelloController que sea un controlador REST. Dentro de la clase crear un método que retorne un saludo.\n\nProbar que retorna el saludo desde el navegador y desde Postman. \n\n\n### Ejercicio 2:\n\nDentro de la misma app crear las clases necesarias para trabajar con \"ordenadores\":\n* Laptop (entidad)\n* LaptopRepository (repositorio)\n* LaptopController (controlador)\n\nDesde LaptopController crear un método que devuelva una lista de objetos Laptop.\n\nProbar que funciona desde Postman.\n\nLos objetos Laptop se pueden insertar desde el método main de la clase principal.\n\n### Ejercicio 3:\n\nCrear un método en LaptopController que reciba un objeto Laptop enviado en formato JSON desde Postman y persistirlo en la base de datos.\n\nComprobar que al obtener de nuevo los laptops aparece el nuevo ordenador creado.\n```",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26997208"
+	},
+	"item": [
+		{
+			"name": "/saludo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/saludo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saludo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/saludo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/saludo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saludo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Apr 2023 17:03:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "¡Saludos desde el ejercicio 1 de las sesiones 4,5 y 6!"
+				}
+			]
+		},
+		{
+			"name": "/api/laptops",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/laptops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"laptops"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/laptops Consulta Previa",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/laptops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"laptops"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Apr 2023 17:04:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"brand\": \"Asus\",\n        \"model\": \"Vivobook S 14 Flip\",\n        \"processor\": \"AMD Ryzen5 7530U\",\n        \"ram\": 16,\n        \"hardDrive\": 512,\n        \"screenSize\": 14,\n        \"screenResolution\": 2000,\n        \"batteryCapacity\": 50,\n        \"price\": 1099.99,\n        \"operatingSystem\": \"Windows 11 Pro\",\n        \"wifi\": true,\n        \"bluetooth\": true\n    },\n    {\n        \"id\": 2,\n        \"brand\": \"Dell\",\n        \"model\": \"Latitude 5430\",\n        \"processor\": \"INTEL i7-1255U\",\n        \"ram\": 16,\n        \"hardDrive\": 512,\n        \"screenSize\": 14,\n        \"screenResolution\": 1920,\n        \"batteryCapacity\": 58,\n        \"price\": 1282.61,\n        \"operatingSystem\": \"Windows 10 Pro\",\n        \"wifi\": true,\n        \"bluetooth\": true\n    }\n]"
+				},
+				{
+					"name": "/api/laptops Cnsulta tras el  POST",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/laptops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"laptops"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Apr 2023 17:06:51 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"brand\": \"Asus\",\n        \"model\": \"Vivobook S 14 Flip\",\n        \"processor\": \"AMD Ryzen5 7530U\",\n        \"ram\": 16,\n        \"hardDrive\": 512,\n        \"screenSize\": 14,\n        \"screenResolution\": 2000,\n        \"batteryCapacity\": 50,\n        \"price\": 1099.99,\n        \"operatingSystem\": \"Windows 11 Pro\",\n        \"wifi\": true,\n        \"bluetooth\": true\n    },\n    {\n        \"id\": 2,\n        \"brand\": \"Dell\",\n        \"model\": \"Latitude 5430\",\n        \"processor\": \"INTEL i7-1255U\",\n        \"ram\": 16,\n        \"hardDrive\": 512,\n        \"screenSize\": 14,\n        \"screenResolution\": 1920,\n        \"batteryCapacity\": 58,\n        \"price\": 1282.61,\n        \"operatingSystem\": \"Windows 10 Pro\",\n        \"wifi\": true,\n        \"bluetooth\": true\n    },\n    {\n        \"id\": 3,\n        \"brand\": \"Lenovo\",\n        \"model\": \"ThinkPad E15 Gen4\",\n        \"processor\": \"AMD Ryzen5 5625U\",\n        \"ram\": 8,\n        \"hardDrive\": 256,\n        \"screenSize\": 15,\n        \"screenResolution\": 1920,\n        \"batteryCapacity\": 45,\n        \"price\": 849.99,\n        \"operatingSystem\": \"Windows 11 Home 64\",\n        \"wifi\": true,\n        \"bluetooth\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/api/laptops",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/laptops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"laptops"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/laptops Envio datos JSON",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"brand\": \"Lenovo\",\r\n        \"model\": \"ThinkPad E15 Gen4\",\r\n        \"processor\": \"AMD Ryzen5 5625U\",\r\n        \"ram\": 8,\r\n        \"hardDrive\": 256,\r\n        \"screenSize\": 15,\r\n        \"screenResolution\": 1920,\r\n        \"batteryCapacity\": 45,\r\n        \"price\": 849.99,\r\n        \"operatingSystem\": \"Windows 11 Home 64\",\r\n        \"wifi\": true,\r\n        \"bluetooth\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/laptops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"laptops"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Apr 2023 17:05:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"brand\": \"Lenovo\",\n    \"model\": \"ThinkPad E15 Gen4\",\n    \"processor\": \"AMD Ryzen5 5625U\",\n    \"ram\": 8,\n    \"hardDrive\": 256,\n    \"screenSize\": 15,\n    \"screenResolution\": 1920,\n    \"batteryCapacity\": 45,\n    \"price\": 849.99,\n    \"operatingSystem\": \"Windows 11 Home 64\",\n    \"wifi\": true,\n    \"bluetooth\": true\n}"
+				}
+			]
+		}
+	]
+}
