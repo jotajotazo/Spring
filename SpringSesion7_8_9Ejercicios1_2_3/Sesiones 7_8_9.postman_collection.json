@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "eb6d27ec-1277-4038-98e3-af7af07e2724",
+		"name": "Sesiones 7, 8 y 9",
+		"description": "``` markdown\n\n## Ejercicios sesiones 4, 5 y 6\n\n### Ejercicio 1:\n\nCrear un proyecto Spring Boot con las dependencias:\n* H2 \n* Spring Data JPA\n* Spring Web \n* Spring Boot Dev tools\n\nCrear una clase HelloController que sea un controlador REST. Dentro de la clase crear un método que retorne un saludo.\n\nProbar que retorna el saludo desde el navegador y desde Postman. \n\n\n### Ejercicio 2:\n\nDentro de la misma app crear las clases necesarias para trabajar con \"ordenadores\":\n* Laptop (entidad)\n* LaptopRepository (repositorio)\n* LaptopController (controlador)\n\nDesde LaptopController crear un método que devuelva una lista de objetos Laptop.\n\nProbar que funciona desde Postman.\n\nLos objetos Laptop se pueden insertar desde el método main de la clase principal.\n\n### Ejercicio 3:\n\nCrear un método en LaptopController que reciba un objeto Laptop enviado en formato JSON desde Postman y persistirlo en la base de datos.\n\nComprobar que al obtener de nuevo los laptops aparece el nuevo ordenador creado.\n```",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26997208"
+	},
+	"item": [
+		{
+			"name": "/saludo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/saludo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"saludo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/laptops/1 BUSCAR UNO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/laptops/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"laptops",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/laptops BUSCAR TODOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/laptops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"laptops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/laptops CREAR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"brand\": \"HP para Borrar\",\r\n        \"model\": \"Spectre\",\r\n        \"processor\": \"Intel Core i7-1255U EVO\",\r\n        \"ram\": 32,\r\n        \"hardDrive\": 2024,\r\n        \"screenSize\": 15,\r\n        \"screenResolution\": 1920,\r\n        \"batteryCapacity\": 66,\r\n        \"price\": 1699.15,\r\n        \"operatingSystem\": \"Windows 11 Home\",\r\n        \"wifi\": true,\r\n        \"bluetooth\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/laptops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"laptops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/laptops ACTUALIZAR",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"brand\": \"Asus actualizado desde Postman\",\r\n    \"model\": \"Vivobook S 14 Flip\",\r\n    \"processor\": \"AMD Ryzen5 7530U\",\r\n    \"ram\": 16,\r\n    \"hardDrive\": 512,\r\n    \"screenSize\": 14,\r\n    \"screenResolution\": 2000,\r\n    \"batteryCapacity\": 50,\r\n    \"price\": 1099.99,\r\n    \"operatingSystem\": \"Windows 11 Pro\",\r\n    \"wifi\": true,\r\n    \"bluetooth\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/laptops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"laptops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/laptops/3 BORRAR UNO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/laptops/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"laptops",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/laptops/ BORRAR TODOS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/laptops/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"laptops",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
